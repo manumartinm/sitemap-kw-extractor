@@ -14,4 +14,6 @@ if submit_button:
     for url in urls_list:
         sitemap_urls = get_all_urls(url)
         kws += extract_keywords(sitemap_urls, position)
+    
+    kws = list(set(kws))
     kws_textarea = st.text_area(label='Kws extraidas....', height=200, value="\n".join(kws))
